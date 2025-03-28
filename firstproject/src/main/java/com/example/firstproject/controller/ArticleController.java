@@ -36,7 +36,7 @@ public class ArticleController {
         Article saved = articleRepository.save(article);
         log.info(saved.toString());
 //        System.out.println(saved.toString());
-        return "";
+        return "redirect:/articles/" + saved.getId();
 
     }
 
@@ -80,7 +80,7 @@ public class ArticleController {
         //인터페이스 iter는 인터페이스 List랑 같지 않다.
 
         //2. 모델에 데이터 등록
-        model.addAttribute("articlelist",articleEntityList);
+        model.addAttribute("articleList",articleEntityList);
         //3. 뷰 페이지 설정
 
         return "articles/index";
